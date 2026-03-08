@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  hedgedoc:
+    image: quay.io/hedgedoc/hedgedoc:latest
+    container_name: hedgedoc
+    ports:
+      - "3000:3000"
+    environment:
+      CMD_DB_URL: sqlite:///data/hedgedoc.db
+    volumes:
+      - ./data:/data
